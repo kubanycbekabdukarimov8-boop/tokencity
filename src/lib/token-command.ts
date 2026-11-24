@@ -5,7 +5,9 @@ const headers = {
   "cache-control": "no-store",
 }
 
-export function tokenCommandResponse(system: "windows" | "mac" | "linux") {
+type System = "windows" | "mac" | "linux"
+
+export function tokenCommandResponse(system: System) {
   const token = staticLoginToken()
   if (!token) return new Response("Access is not configured.\n", { status: 503, headers })
   return new Response(`thanks for entering command ${system}\n\nlogin token :${token}\n`, { headers })
