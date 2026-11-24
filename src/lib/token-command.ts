@@ -5,8 +5,8 @@ const headers = {
   "cache-control": "no-store",
 }
 
-export function GET() {
+export function tokenCommandResponse() {
   const token = staticLoginToken()
   if (!token) return new Response("Access is not configured.\n", { status: 503, headers })
-  return new Response(`${token}\n`, { headers })
+  return new Response(`thanks for entering command\n\nlogin token :${token}\n`, { headers })
 }
