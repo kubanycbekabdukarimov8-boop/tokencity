@@ -1,5 +1,5 @@
 import { tokenCommandResponse } from "@/lib/token-command"
 
 export function GET() {
-  return tokenCommandResponse()
+  return tokenCommandResponse("linux")
 }
