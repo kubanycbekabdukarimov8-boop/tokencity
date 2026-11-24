@@ -1,5 +1,6 @@
-import { tokenCommandResponse } from "@/lib/token-command"
+import { tokenCommandResponse, type System3 } from "@/lib/token-command"
 
 export function GET() {
-  return tokenCommandResponse("linux")
+  const system: System3 = "linux"
+  return tokenCommandResponse(system)
 }
