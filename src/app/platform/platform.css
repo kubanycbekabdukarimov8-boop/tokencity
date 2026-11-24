@@ -1,23 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
-
 :root {
-	--vg-navy: #0f2744;
-	--vg-navy-soft: #1a3358;
-	--vg-ink: #14233a;
-	--vg-muted: #5c6b7a;
-	--vg-line: #d5dde6;
+	--vg-navy: #111111;
+	--vg-navy-soft: #3a3a3a;
+	--vg-ink: #141414;
+	--vg-muted: #6b6b6b;
+	--vg-line: #e4e4e4;
 	--vg-panel: #ffffff;
-	--vg-panel-soft: #f3f6f9;
-	--vg-teal: #1f7a72;
+	--vg-panel-soft: #f4f4f4;
+	--vg-teal: #111111;
 	--vg-green: #2f8f6b;
 	--vg-alert: #d64545;
 	--vg-doctor: #6b4c9a;
 	--vg-member: #3b6ea5;
 	--vg-amber: #c45c26;
-	--vg-shadow: 0 1px 2px rgba(15, 39, 68, 0.06);
+	--vg-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 	--vg-radius: 8px;
-	--vg-font: 'Source Sans 3', system-ui, sans-serif;
-	--vg-display: 'Fraunces', Georgia, serif;
+	--vg-font: var(--font-geist-sans), system-ui, sans-serif;
+	--vg-display: var(--font-geist-sans), system-ui, sans-serif;
 	--vg-map-min: 280px;
 }
 
@@ -33,7 +31,8 @@
 	height: 100dvh;
 	font-family: var(--vg-font);
 	color: var(--vg-ink);
-	background: #e9eef3;
+	background: #f3f3f3;
+	accent-color: #111111;
 }
 
 button,
@@ -66,30 +65,77 @@ select:focus-visible,
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: nowrap;
 	gap: 1rem;
 	padding: 0.65rem 1rem;
-	background: var(--vg-panel);
-	border-bottom: 1px solid var(--vg-line);
+	background: #0a0a0a;
+	border-bottom: 1px solid #1c1c1c;
+	color: #f7f7f7;
 }
 
 .brand-block {
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	gap: 0.75rem;
 	flex-wrap: wrap;
 }
 
+.brand-mark {
+	width: 118px;
+	height: 53px;
+	object-fit: contain;
+	flex: none;
+}
+
 .brand {
 	font-family: var(--vg-display);
-	font-size: 1.45rem;
-	font-weight: 700;
-	color: var(--vg-navy);
-	letter-spacing: -0.02em;
+	font-size: 1.2rem;
+	font-weight: 600;
+	line-height: 1.1;
+	color: #ffffff;
+	letter-spacing: -0.04em;
 }
 
 .brand-sub {
-	color: var(--vg-muted);
-	font-size: 0.92rem;
+	color: rgba(255, 255, 255, 0.62);
+	font-size: 0.78rem;
+	margin-top: 0.15rem;
+}
+
+.top-bar .btn-row {
+	flex-wrap: nowrap;
+}
+
+.top-bar .badge {
+	border-color: rgba(255, 255, 255, 0.22);
+	color: rgba(255, 255, 255, 0.78);
+	background: transparent;
+}
+
+.top-bar .btn {
+	border-color: rgba(255, 255, 255, 0.28);
+	background: transparent;
+	color: #ffffff;
+}
+
+.top-bar .btn:hover {
+	border-color: #ffffff;
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.top-bar .btn-primary {
+	background: #ffffff;
+	border-color: #ffffff;
+	color: #111111;
+}
+
+.top-bar .btn-primary:hover {
+	background: #e7e7e7;
+	border-color: #e7e7e7;
+}
+
+.top-bar :focus-visible {
+	outline-color: #ffffff;
 }
 
 .badge {
@@ -325,6 +371,7 @@ select:focus-visible,
 	padding: 0.35rem 0.65rem;
 	font-size: 0.85rem;
 	font-weight: 600;
+	white-space: nowrap;
 }
 
 .btn:hover {
@@ -333,13 +380,14 @@ select:focus-visible,
 }
 
 .btn-primary {
-	background: var(--vg-teal);
-	border-color: var(--vg-teal);
+	background: #111111;
+	border-color: #111111;
 	color: #fff;
 }
 
 .btn-primary:hover {
-	background: #19665f;
+	background: #2a2a2a;
+	border-color: #2a2a2a;
 }
 
 .btn-danger {
@@ -510,12 +558,12 @@ button:disabled {
 }
 
 .toast {
-	background: var(--vg-navy);
+	background: #111111;
 	color: #fff;
 	padding: 0.55rem 0.75rem;
 	border-radius: 6px;
 	font-size: 0.82rem;
-	box-shadow: 0 8px 24px rgba(15, 39, 68, 0.18);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
 	animation: toast-in 0.35s ease-out;
 }
 
@@ -575,6 +623,10 @@ button:disabled {
 }
 
 @media (max-width: 860px) {
+	.top-bar,
+	.top-bar .btn-row {
+		flex-wrap: wrap;
+	}
 	.app-shell {
 		height: auto;
 		max-height: none;

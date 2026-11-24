@@ -49,17 +49,18 @@ body {
 }
 
 .sign-in-glass {
-  background: rgba(255, 255, 255, 0.42);
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(8, 8, 10, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow:
-    0 24px 70px rgba(0, 0, 0, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    0 24px 70px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(22px);
+  color: #f7f7f7;
 }
 
 ::selection {
-  background: #f41c5e;
-  color: #ffffff;
+  background: #ffffff;
+  color: #0a0a0a;
 }
 
 .gate {
@@ -100,12 +101,12 @@ body {
   }
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #1a1a1a;
-  caret-color: #1a1a1a;
-  box-shadow: 0 0 0 1000px #ffffff inset;
+.sign-in-glass input:-webkit-autofill,
+.sign-in-glass input:-webkit-autofill:hover,
+.sign-in-glass input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f7f7f7;
+  caret-color: #f7f7f7;
+  box-shadow: 0 0 0 1000px #1a1a1a inset;
 }
 
 @media (prefers-reduced-motion: reduce) {

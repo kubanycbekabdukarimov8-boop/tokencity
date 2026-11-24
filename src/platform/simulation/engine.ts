@@ -986,7 +986,7 @@ export class SimulationEngine {
 				.reduce((s, a) => s + a.credits, 0);
 			helper.benefitBalance = issued;
 			if (issued !== already) {
-				this.toast(`+${award.credits} Vitality benefit credits (demo)`);
+				this.toast(`+${award.credits} Token City benefit credits (demo)`);
 			}
 		}
 		this.pushEvent(

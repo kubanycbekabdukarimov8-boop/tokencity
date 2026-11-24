@@ -24,8 +24,17 @@ export function TopBar({
   return (
     <header className="top-bar">
       <div className="brand-block">
-        <div className="brand">Vitality Guard</div>
-        <div className="brand-sub">Pozuelo de Alarcón · proposed city pilot</div>
+        <img
+          src="/brand/token-city.gif"
+          alt=""
+          width={118}
+          height={53}
+          className="brand-mark"
+        />
+        <div>
+          <div className="brand">Token City</div>
+          <div className="brand-sub">Pozuelo de Alarcón · proposed city pilot</div>
+        </div>
         <span className="badge">Investor demo · simulated data</span>
       </div>
       <div className="btn-row" style={{ alignItems: "center" }}>

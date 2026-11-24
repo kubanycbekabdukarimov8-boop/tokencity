@@ -156,7 +156,7 @@ export function LoginForm() {
   return (
     <section className="sign-in-glass gate w-full rounded-[28px] px-5 py-8 sm:px-8 sm:py-10">
       <VitalityLogo />
-      <h1 className="mt-5 text-center text-2xl font-semibold tracking-tight text-neutral-950">
+      <h1 className="mt-2 text-center text-2xl font-semibold tracking-tight text-white">
         Sign in
       </h1>
       <style>{`
@@ -167,7 +167,7 @@ export function LoginForm() {
       `}</style>
       <div className="mx-auto mt-3 max-w-[36ch] text-center">
         <p
-          className="text-sm font-semibold leading-6 text-neutral-950"
+          className="text-sm font-semibold leading-6 text-white"
           style={{ animation: "string-blink 2.2s ease-in-out infinite" }}
         >
           Use your 24-character login token.
@@ -178,12 +178,12 @@ export function LoginForm() {
         <input type="hidden" name="token" value={value} />
 
         <div className="flex items-center justify-between gap-3">
-          <label id="token-label" className="text-sm font-medium text-neutral-950">
+          <label id="token-label" className="text-sm font-medium text-white">
             Login token
           </label>
-          <p className="font-mono text-xs tabular-nums text-neutral-800">
+          <p className="font-mono text-xs tabular-nums text-white/80">
             {value.length}
-            <span className="text-neutral-600"> / {TOKEN_LENGTH}</span>
+            <span className="text-white/45"> / {TOKEN_LENGTH}</span>
           </p>
         </div>
 
@@ -199,7 +199,7 @@ export function LoginForm() {
               const end = start + GROUP_SIZE - 1
               return (
                 <label key={start} className="block">
-                  <span className="mb-1.5 block text-center text-[11px] font-medium tracking-wide text-neutral-700">
+                  <span className="mb-1.5 block text-center text-[11px] font-medium tracking-wide text-white/55">
                     {start}–{end}
                   </span>
                   <input
@@ -221,8 +221,8 @@ export function LoginForm() {
                     onPaste={onPaste}
                     onBeforeInput={onBeforeInput}
                     onKeyDown={(event) => onKeyDown(index, event)}
-                    className={`h-14 w-full rounded-xl border border-white/70 bg-white/70 text-center font-mono text-base text-neutral-950 outline-none transition focus:border-[#F41C5E] focus:bg-white focus:ring-2 focus:ring-[#F41C5E]/30 ${
-                      error ? "border-[#F41C5E]" : ""
+                    className={`h-14 w-full rounded-xl border border-white/20 bg-white/10 text-center font-mono text-base text-white outline-none transition focus:border-white focus:bg-white/15 focus:ring-2 focus:ring-white/25 ${
+                      error ? "border-[#ffb4b4]" : ""
                     }`}
                   />
                 </label>
@@ -232,14 +232,14 @@ export function LoginForm() {
         </div>
 
         <div className="mt-3 space-y-2">
-          <p id="token-hint" className="text-sm leading-5 text-neutral-800">
+          <p id="token-hint" className="text-sm leading-5 text-white/70">
             {hintFor(value.length)}
           </p>
           <div className="flex justify-end gap-4 text-sm">
             {value.length > 0 ? (
               <button
                 type="button"
-                className="font-medium text-[#F41C5E] underline-offset-2 hover:underline"
+                className="font-medium text-white underline-offset-2 hover:underline"
                 onClick={() => {
                   write("")
                   focusGroup(0)
@@ -250,7 +250,7 @@ export function LoginForm() {
             ) : null}
             <button
               type="button"
-              className="font-medium text-[#F41C5E] underline-offset-2 hover:underline"
+              className="font-medium text-white underline-offset-2 hover:underline"
               aria-pressed={visible}
               onClick={() => setVisible((current) => !current)}
             >
@@ -260,7 +260,7 @@ export function LoginForm() {
         </div>
 
         {error ? (
-          <p id="token-error" role="alert" className="mt-3 text-sm text-[#9f1239]">
+          <p id="token-error" role="alert" className="mt-3 text-sm text-[#ffb4b4]">
             {error}
           </p>
         ) : null}
@@ -270,14 +270,14 @@ export function LoginForm() {
           disabled={!ready}
           className={`mt-6 flex h-12 w-full items-center justify-center rounded-full border text-sm font-medium transition ${
             ready
-              ? "border-transparent bg-[#F41C5E] text-white hover:bg-[#de1856]"
-              : "cursor-not-allowed border-white/80 bg-white/80 text-neutral-800"
+              ? "border-transparent bg-white text-black hover:bg-neutral-200"
+              : "cursor-not-allowed border-white/15 bg-white/10 text-white/35"
           }`}
         >
           {pending ? "Checking" : "Sign in"}
         </button>
       </form>
-      <p className="mt-6 text-center text-sm font-semibold leading-6 text-neutral-950">
+      <p className="mt-6 text-center text-sm font-semibold leading-6 text-white">
         Contact the hiring team to get this token.
       </p>
     </section>
